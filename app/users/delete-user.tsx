@@ -19,7 +19,7 @@ export default function DeleteUser({ user }: { user: User }) {
 
   async function handleCLick() {
     setIsMuted(false);
-    await fetch(`http://localhost:3000/api/users?id=${user.id}`, {
+    await fetch(`${process.env.API_BASE_URL}/users?id=${user.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

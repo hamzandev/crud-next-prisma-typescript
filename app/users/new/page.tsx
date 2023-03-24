@@ -18,7 +18,7 @@ export default function AddUser() {
     e.preventDefault();
     setIsSubmit(!isSubmit);
     const newAge = Number(age);
-    await fetch("http://localhost:3000/api/users", {
+    await fetch(`http://localhost:3000/api/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function AddUser() {
             placeholder="Enter email address"
           />
           <input
-            onChange={(e: SyntheticEvent) => setAge(e.target.value)}
+            onChange={(e: any) => setAge(e.target.value)}
             name="age"
             type="number"
             className="input input-bordered w-full"

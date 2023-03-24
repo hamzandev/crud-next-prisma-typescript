@@ -3,11 +3,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
-export async function GET(request: Request) {
+export async function GET(req: Request) {
   const users = await prisma.users.findMany();
-  // const data = JSON.stringify(users);
-  // return new Response(data);
-  return NextResponse.json(users);
+  return NextResponse.json({
+    message: "success get all users",
+    data: users,
+  });
 }
 
 export async function POST(request: Request) {

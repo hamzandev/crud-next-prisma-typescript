@@ -13,7 +13,7 @@ type User = {
 };
 
 export default function UpdateUser({ user }: { user: User }) {
-  const [userState, setUserState] = useState({});
+  const [userState, setUserState] = useState({ ...user });
   const [age, setAge] = useState(0);
   const [modal, setModal] = useState(false);
   const [isMuted, setMuted] = useState(false);
@@ -25,12 +25,15 @@ export default function UpdateUser({ user }: { user: User }) {
       ...userState,
       [e.target.name]: e.target.value,
     });
+
+    console.log({ userState });
   }
 
   async function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
     setMuted(true);
-    await fetch(`http://localhost:3000/api/users?id=${user.id}`, {
+    // alert(JSON.stringify(userState));
+    await fetch(`${process.env.API_BASE_URL}/users?id=${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -38,8 +41,9 @@ export default function UpdateUser({ user }: { user: User }) {
       body: JSON.stringify({ ...userState, age }),
     });
 
+    setModal(false);
     setMuted(false);
-    router.refresh();
+    router.push("/users");
   }
   return (
     <div>
@@ -57,7 +61,7 @@ export default function UpdateUser({ user }: { user: User }) {
                 onChange={handleChange}
                 type="text"
                 name="name"
-                value={user.name}
+                value={user.name + " test"}
                 className="input input-bordered w-full"
                 placeholder="Enter name of user"
               />
@@ -108,6 +112,7 @@ export default function UpdateUser({ user }: { user: User }) {
               </button>
               <button
                 type="submit"
+                disabled={isMuted}
                 className={`btn btn-primary ${isMuted && "loading"}`}
               >
                 Save Change
