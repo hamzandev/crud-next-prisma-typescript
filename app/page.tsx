@@ -1,91 +1,87 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
+    <>
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content text-center">
+          <div className="">
+            <span className="text-xl block font-semibold text-secondary">
+              Hello there,
+            </span>
+            <h1 className="md:text-5xl text-4xl md:w-full w-11/12 mx-auto font-bold">
+              My name is Hamzan Wahyudi.
+            </h1>
+            <h1 className="md:text-5xl text-3xl font-bold">
+              I am a{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-tr from-info to-secondary">
+                Fullstack Web Developer
+              </span>
+            </h1>
+            <p className="py-6 max-w-xl mx-auto">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
+            </p>
+            <div className="flex md:flex-row flex-col justify-center gap-3">
+              <button className="btn btn-primary px-6">Get Started</button>
+              <button className="btn btn-white px-6 btn-outline">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto pt-5">
+        <h2 className="text-2xl md:w-1/2 w-3/4 mx-auto text-center font-bold mb-5">
+          How do you access our Services?
+        </h2>
+        <p className="text-lg max-w-xl text-center mb-5 mx-auto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+          harum necessitatibus molestias velit, iste consequuntur aliquam
+          corporis modi accusamus dicta voluptatibus neque beatae nesciunt.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+        <ul className="steps md:steps-horizontal steps-vertical">
+          <li className="step step-primary">
+            <div className="grid gap-3 md:text-center text-left">
+              <strong>Register</strong>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Repellendus dolores maiores eius harum!
+              </p>
+            </div>
+          </li>
+          <li className="step">
+            <div className="grid gap-3 md:text-center text-left md:mb-0 mb-12">
+              <strong>Choose plan</strong>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+                reprehenderit obcaecati rem?
+              </p>
+            </div>
+          </li>
+          <li className="step">
+            <div className="grid gap-3 md:text-center text-left md:mb-0 mb-12">
+              <strong>Purchase</strong>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                ratione impedit blanditiis fuga fugit.
+              </p>
+            </div>
+          </li>
+          <li className="step">
+            <div className="grid gap-3 md:text-center text-left md:mb-0 mb-12">
+              <strong>Receive Product</strong>
+              <p className="text-gray-500">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae
+                reprehenderit explicabo odio numquam, eligendi neque?
+              </p>
+            </div>
+          </li>
+        </ul>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </>
+  );
 }
