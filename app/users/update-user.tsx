@@ -33,7 +33,7 @@ export default function UpdateUser({ user }: { user: User }) {
     e.preventDefault();
     setMuted(true);
     // alert(JSON.stringify(userState));
-    await fetch(`${process.env.API_BASE_URL}/users?id=${user.id}`, {
+    await fetch(`/api/users?id=${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
