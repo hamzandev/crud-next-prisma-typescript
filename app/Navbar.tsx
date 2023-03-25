@@ -38,12 +38,12 @@ export default function Navbar() {
         <a className="btn btn-ghost normal-case text-xl">HamzanDev</a>
       </div>
       <div className="navbar-end">
-        <a
+        <Link
           href={"https://wa.me/6283129535479?text=Assalamualaikum+mas+wahyu"}
           target="_blank"
         >
           <button className="btn btn-primary btn-sm">Donate</button>
-        </a>
+        </Link>
       </div>
     </div>
   );
