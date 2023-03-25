@@ -2,7 +2,7 @@ import Link from "next/link";
 import DeleteUser from "./delete-user";
 import UpdateUser from "./update-user";
 
-export async function getUsers() {
+async function getUsers() {
   const res = await fetch(`${process.env.API_BASE_URL}/users`, {
     cache: "no-store",
   });
