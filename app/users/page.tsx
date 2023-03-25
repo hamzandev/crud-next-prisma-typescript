@@ -4,9 +4,12 @@ import DeleteUser from "./delete-user";
 import UpdateUser from "./update-user";
 
 async function getUsers() {
-  const res = await fetch(`${process.env.API_BASE_URL}/users`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `https://crud-next-prisma-codever.vercel.app/api/users`,
+    {
+      cache: "no-store",
+    }
+  );
   const { data } = await res.json();
   return data;
 }
