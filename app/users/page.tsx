@@ -2,14 +2,6 @@ import Link from "next/link";
 import DeleteUser from "./delete-user";
 import UpdateUser from "./update-user";
 
-async function getUsers() {
-  const res = await fetch(`${process.env.API_BASE_URL}/users`, {
-    cache: "no-store",
-  });
-  const { data } = await res.json();
-  return data;
-}
-
 export default async function Users() {
   const users = await getUsers();
   return (
@@ -43,4 +35,12 @@ export default async function Users() {
       </div>
     </div>
   );
+}
+
+async function getUsers() {
+  const res = await fetch(`${process.env.API_BASE_URL}/users`, {
+    cache: "no-store",
+  });
+  const { data } = await res.json();
+  return data;
 }
