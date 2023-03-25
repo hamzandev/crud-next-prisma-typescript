@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
 export async function GET(req: Request) {
-  const users = await prisma.users.findMany();
+  const users = await prisma.users.findMany({});
   return NextResponse.json({
     message: "success get all users",
     data: users,
