@@ -1,8 +1,9 @@
 import Link from "next/link";
+
 import DeleteUser from "./delete-user";
 import UpdateUser from "./update-user";
 
-export default async function Users() {
+export default async function UsersList() {
   const users = await getUsers();
   return (
     <div className="container mx-auto py-3">
@@ -20,12 +21,6 @@ export default async function Users() {
               <p>{user.email}</p>
               <span>{user.address}</span>
               <div className="card-actions justify-end">
-                {/* <Link
-                  href={`/users/${user.username}`}
-                  className="btn btn-sm btn-primary"
-                >
-                  Detail
-                </Link> */}
                 <UpdateUser user={user} />
                 <DeleteUser user={user} />
               </div>
